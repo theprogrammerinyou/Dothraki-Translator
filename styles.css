@@ -54,7 +54,7 @@ textarea{
 }
 
 p {
-    color: var(--secondary-color);
+    color: red;
 }
 
 #special {
