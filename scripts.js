@@ -3,7 +3,7 @@ var Translate = document.querySelector('#btn-translate');
 var output = document.querySelector('#outputDiv');
 var msg = new SpeechSynthesisUtterance();
 
-const serverURL = '	https://api.funtranslations.com/translate/minion.json';
+const serverURL = '	https://api.funtranslations.com/translate/dothraki.json';
 
 // getting server URL 
 const getTranslationURL = (text) => {
@@ -28,6 +28,7 @@ const getDataFromAPI = () => {
     fetch(getTranslationURL(input))
         .then(response => response.json())
         .then(json => {
+            console.log('json', json);
             var translatedText = json.contents.translated;
             output.innerText = translatedText;
             textToSpeech(translatedText);
